@@ -1,0 +1,157 @@
+This HowTo will describe how to get W3af 1.6 running on a CentOS 6.5 system with Python 2.7.6.
+
+I will not go into the running and configuring of W3af, only get it up and running.
+
+Since CentOS 6.x comes with Python 2.6.6 we need to install Python 2.7.6, I found this (http://toomuchdata.com/2014/02/16/how-to-install-python-on-centos/) guide.
+I desided to install Python 2.7.6 with UTF-32 support (--enable-unicode=ucs4).
+
+Installing Python 2.7.6:
+Prerequisites:
+1: We need some software installed before we can compile and install Python 2.7.6
+1.1: Run this command: yum groupinstall "Development tools"
+1.2: Run this command: yum install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel
+
+Shared library:
+1: /etc/ld.so.conf in a text editor and add the path /usr/local/lib to the end of it
+1.1: Run this command: /sbin/ldconfig
+
+Download, compile and install Python 2.7.6:
+1: Change to /tmp: cd /tmp
+1.1: Get the Python 2.7.6 src code by running this command: wget http://python.org/ftp/python/2.7.6/Python-2.7.6.tar.xz
+1.2: Unpack the file we just recieved by running this command: tar xzf Python-2.7.6.tar.xz
+1.3: Change to the Python-2.7.6 directory by running this command: cd Python-2.7.6
+1.4: Configure Python 2.7.6 by running this command: ./configure --prefix=/usr/local --enable-unicode=ucs4 --enable-shared LDFLAGS="-Wl,-rpath /usr/local/lib"
+1.4.1: Note that I actually included the "--enable-shared LDFLAGS="-Wl,-rpath /usr/local/lib" option even thou I did Shared library, this is done in the case that you forgot to run the /sbin/ldconfig command.
+1.5: Compile and install Python 2.7.6 by running this command: make && make altinstall
+1.5.1: Note the make altinstall command, this is to avoid problems with the Python 2.6.6 allready installed on the system.
+1.6: Change directory back to tmp by running this command: cd ..
+
+You should now have a working version of Python 2.7.6, you can test this by running this command: python2.7 --version
+The above command should show the following: Python 2.7.6
+
+Now that we have a working version of Python 2.7.6 we can install Setuptools and pip to it.
+
+Installing Setuptools:
+1: We need to get ez_setup.py file by running this command: wget https://bitbucket.org/pypa/setuptools/raw/bootstrap/ez_setup.py
+2: Install Setuptools by running this command: python2.7 ez_setup.py
+
+Installing Pip:
+1: We can now install pip by running this command: easy_install-2.7 pip
+
+Now that we have pip installed for Python 2.7.6, we can use it this way:
+pip2.7 install [packagename]
+pip2.7 install --upgrade [packagename]
+pip2.7 uninstall [packagename]
+
+Now that we have a working Python 2.7.6 with setuptools and pip working we can move on to installing W3af 1.6.
+
+Download and installing W3af:
+1: We need to change to a directory where we want to install W3af, i choose /opt so run this command: cd /opt
+2: Get W3af 1.6 by running this command: git clone --depth 1 https://github.com/andresriancho/w3af.git
+3: Change to the newly created W3af directory: cd w3af
+
+We can now try and run the w3af_console with following command: ./w3af_console
+
+This command will do some prerequisit checks, and it will output the following:
+We recommend you install pip before continuing.
+http://www.pip-installer.org/en/latest/installing.html
+w3af's requirements are not met, one or more third-party libraries need to be installed.
+
+On Debian systems please install the following operating system packages before running the pip installer:
+    sudo apt-get install build-essential python-setuptools git python-pip libssl-dev python2.7-dev libsqlite3-dev libxslt1-dev libyaml-dev libxml2-dev python-pip
+
+Your python installation needs the following modules to run w3af:
+    clamd github git.util pybloomfilter esmre phply nltk chardet pdfminer concurrent.futures scapy.config guess_language cluster msgpack ntlm Halberd
+
+After installing any missing operating system packages, use pip to install the remaining modules:
+    sudo pip install clamd==1.0.1 PyGithub==1.21.0 GitPython==0.3.2.RC1 pybloomfiltermmap==0.3.11 esmre==0.3.1 nltk==2.0.4 chardet==2.1.1 pdfminer==20110515 futures==2.1.5 scapy-real==2.2.0-dev guess-language==0.2 cluster==1.1.1b3 msgpack-python==0.2.4 python-ntlm==1.0.1 halberd==0.2.4
+    sudo pip install --ignore-installed git+https://github.com/andresriancho/phply.git#egg=phply
+
+A script with these commands has been created for you at /tmp/w3af_dependency_install.sh
+
+So the first thing we notice is that it is giving a sudo apt-get command, which means that we dident get the CentOS 6.x bug fixed version (https://github.com/andresriancho/w3af/issues/2067), so we need to run the following commands:
+1: git pull
+2: git checkout feature/fix_2067
+
+We can now run the ./w3af_console command again: ./w3af_console
+And this time it will output the following:
+
+We recommend you install pip before continuing.
+http://www.pip-installer.org/en/latest/installing.html
+w3af's requirements are not met, one or more third-party libraries need to be installed.
+
+On CentOS systems please install the following operating system packages before running the pip installer:
+    sudo yum install python-pip python-setuptools libsqlite3x-devel python-pip
+
+Your python installation needs the following modules to run w3af:
+    clamd github git.util pybloomfilter esmre phply nltk chardet pdfminer concurrent.futures scapy.config guess_language cluster msgpack ntlm Halberd
+
+After installing any missing operating system packages, use pip to install the remaining modules:
+    sudo pip-python install clamd==1.0.1 PyGithub==1.21.0 GitPython==0.3.2.RC1 pybloomfiltermmap==0.3.11 esmre==0.3.1 nltk==2.0.4 chardet==2.1.1 pdfminer==20110515 futures==2.1.5 scapy-real==2.2.0-dev guess-language==0.2 cluster==1.1.1b3 msgpack-python==0.2.4 python-ntlm==1.0.1 halberd==0.2.4
+    sudo pip-python install --ignore-installed git+https://github.com/andresriancho/phply.git#egg=phply
+
+A script with these commands has been created for you at /tmp/w3af_dependency_install.sh
+
+Now if we try and run the /tmp/w3af_dependency_install.sh as suggested we wont get the alle the prerequisites installed.
+
+So we need some more files installed on our system to make sure that W3af will run on CentOs 6.5, according to the dependency check done by W3af we should have the following packages on the system:
+
+python-pip, python-devel, python-setuptools, libsqlite3x-devel, gcc-c++ ,gcc, make, git, libxml2-devel, libxslt-devel, pyOpenSSL, openssl-devel, libcom_err-devel, libcom_err
+
+If we looke at the above prerequisites, we will see that this is looking for the following:
+python-pip (This will result in the python-pip for Python 2.6.6, and we have allready installed pip for Python 2.7.6)
+python-devel (This will result in the python-devel for Python 2.6.6, and we have allready installed with Python 2.7.6)
+python-setuptools (This will result in the python-setuptools for Python 2.6.6, and we have allready installed Setuptools for Python 2.7.6)
+libsqlite3x-devel (This will fail if we try to install it, since this is the package name for a Debian type system, as far as I can find this is called sqlite-devel on a CentOS 6.x system)
+gcc-c++ (This was installed by the above yum groupinstall "Development tools" command according to this (http://www.asim.pk/2010/05/28/build-essentials-in-centos/))
+gcc (This was installed by the above yum groupinstall "Development tools" command according to this (http://www.asim.pk/2010/05/28/build-essentials-in-centos/))
+make (This was installed by the above yum groupinstall "Development tools" command according to this (http://www.asim.pk/2010/05/28/build-essentials-in-centos/))
+git (Needs to be installed)
+libxml2-devel (Needs to be installed)
+libxslt-devel (Needs to be installed)
+pyOpenSSL (Needs to be installed)
+openssl-devel (Needs to be installed)
+libcom_err-devel (Should be installed)
+libcom_err (Should be installed)
+
+As you can see above we could have some conflicts with the default Python 2.6.6 packages but this should not be a problem (at least not from the testing that i have done so far).
+
+Prerequisites:
+1: We need to make sure that all W3af prerequisites are met, so we need to run this command: yum install python-pip python-devel python-setuptools sqlite-devel gcc-c++ gcc make git libxml2-devel libxslt-devel pyOpenSSL openssl-devel libcom_err-devel libcom_err
+
+If we run the w3af_console command now it will still complain abot the requirements, this is due to the fact that the requirement check is looking for a Debian package whit we cannot install on CentOS 6.5,
+so we need to change the requirement check for CentOS by doing the following:
+1: Change to the directory where the CentOS requiremnts file is located: cd /opt/w3af/w3af/core/controllers/dependency_check/platforms
+2: Make a backup of the centos.py file: cp centos.py centos.py.org
+3: Change the following from:libsqlite3x-devel To: sqlite-devel
+
+We should now meet the requirements needed by W3af to continue to the Python requirements, but since we have installed Python 2.7.6 on the system we cannot use the suggested command:
+sudo pip-python install clamd==1.0.1 PyGithub==1.21.0 GitPython==0.3.2.RC1 pybloomfiltermmap==0.3.11 esmre==0.3.1 nltk==2.0.4 chardet==2.1.1 pdfminer==20110515 futures==2.1.5 scapy-real==2.2.0-dev guess-language==0.2 cluster==1.1.1b3 msgpack-python==0.2.4 python-ntlm==1.0.1 halberd==0.2.4
+
+Becaurse this will install the Python module for the default Python 2.6.6, and W3af needs Python 2.7.6:
+1: Run this command to install the Python modules: pip2.7 install clamd==1.0.1 PyGithub==1.21.0 GitPython==0.3.2.RC1 pybloomfiltermmap==0.3.11 esmre==0.3.1 nltk==2.0.4 chardet==2.1.1 pdfminer==20110515 futures==2.1.5 scapy-real==2.2.0-dev guess-language==0.2 cluster==1.1.1b3 msgpack-python==0.2.4 python-ntlm==1.0.1 halberd==0.2.4
+
+As the quick and bright have seen from the above command W3af can use Clamd, which is not installed on the system yet, so to install this we need to install the EPEL repo(http://fedoraproject.org/wiki/EPEL) (Or if you prefer another repo(http://wiki.centos.org/AdditionalResources/Repositories) which have the Clamd package).
+
+Installing the EPEL repo:
+1: Change directory to /tmp: cd /tmp
+2: Download the epel-release-6-8.noarch.rpm: wget http://ftp.crc.dk/fedora-epel/6/i386/epel-release-6-8.noarch.rpm
+3: Install the epel-release-6-8.noarch.rpm: yum install epel-release-6-8.noarch.rpm
+4: Change back to the W3af installation directory: cd /opt/w3af
+
+We should now have the EPEL repo installed, and can now install Clamd:
+1: Install Clamd: yum install clamd
+
+Now we only need the last requirement for W3af to run, and that is the phply module, so lets install this.
+
+Installing phply:
+1: Run this command: pip2.7 install --ignore-installed git+https://github.com/andresriancho/phply.git#egg=phply
+
+Now we only need to have the w3af_console use the installed Python 2.7.6, this is done by editing the w3af_console file.
+1: Change the top line from: #!/usr/bin/env python To: #!/usr/bin/env python2.7
+
+Now we should be able to run the w3af_console command and see it start up, and be running.
+
+At this time it is only the w3af_console that have been bug fixed according to this Bug Report(https://github.com/andresriancho/w3af/issues/2067).
+
+Happy W3af running :)

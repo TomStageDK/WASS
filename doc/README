@@ -1,0 +1,37 @@
+Tested with and Dependencies:
+======================
+	Python 2.6, 2.7 and 3.x
+    Arachni 0.4.x Can be downloaded from: http://www.arachni-scanner.com/download/
+    Nikto 2.x Can be downloaded from: https://www.cirt.net/Nikto2
+    Nmap 6.x Can be downloaded from: http://nmap.org/download.html
+    OpenVAS-6 Can be downloaded from: http://www.openvas.org/download.html
+    Skipfish 2.09b Can be downloaded from: https://code.google.com/p/skipfish/downloads/list
+    w3af 1.1, 1.6 Can be downloaded from: http://w3af.org/download
+    Wapiti 2.3.0 Can be downloaded from: http://wapiti.sourceforge.net/
+    jwhois 4.0 Can be downloaded from: https://www.gnu.org/software/jwhois/
+    ZAProxy 2.x Can be downloaded from: http://code.google.com/p/zaproxy/wiki/Downloads?tm=2
+    
+    Python modules:
+    pip 1.5.4 On Centos 6.x the version of pip from epel is 1.3.1 which apparently fails after the installation of the latest version of 
+    		 requests so i ran the following command to get pip working once more:  pip install -U pip
+    python-owasp-zap-v2 0.0.8 Installation information can be found here: https://pypi.python.org/pypi/python-owasp-zap-v2
+    tld Installation information can be found here: https://pypi.python.org/pypi/tld/
+    pythonwhois Installation information can be found here: https://pypi.python.org/pypi/pythonwhois
+    argparse Installation information can be found here: https://pypi.python.org/pypi/argparse
+    requests Installation information can be found here: http://docs.python-requests.org/en/latest/user/install/ 
+    		 (This was / is part of CentOS 6.x but it is only version 1.1.0, so i updated it to get the latest features, 
+    		 at the time of writing this the version was: 2.2.1, i ran the following command to update: pip install requests --upgrade)
+    ipaddr 2.1.11 Installation information can be found here: https://pypi.python.org/pypi/ipaddr/
+
+
+Installation
+======================
+WASS is developed on CentOS 6.x and some of the Dependencies are available as native .rpm packages either from base or atomicorp yum repositories (http://www.atomicorp.com/channels/).
+
+WASS is mainly dependent on the ZAProxy, since its proxy is used by all the other Web Application Scanning tools. 
+
+
+Code documentation
+==================
+
+Read the code;

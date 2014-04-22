@@ -1,0 +1,26 @@
+This is the WASS project road map / ToDo list:
+
+Make sure that W3af (Both 1.1 and 1.6), Wapiti and OpenVAS-6 works, and that the scans runs without errors.
+
+Make sure that the -u (exclude url) function is working for all relevant scanners.
+
+Optimize the general program structure.
+
+Implement an xml parser / converter to the Simple Software Vulnerability Language (SSVL) or OWASP Data Exchange Format Project format,
+for all the Web Application scanners that support XML output.
+
+Implement a per scan config file, so it would be easy to do a follow up scan. This could / should handle:
+	Target to scan: ex. zero.webappsecureti.com
+	Port to scan: ex. 80, 8080
+	application path: ex. /
+	The Customer name: ex. Your Company Name
+	Type of scan to do ex. W3af, Info, and so on?
+	Username
+	Password
+	Login URL
+	Type of Login: Basic or form
+	exclude url: ex. logout, exit (This will be converted into regex for the software that can use it, and remain as a string for the software that uses that)
+
+Get the integration to Threadfix working, this is dependent on a working Threadfix installation.
+
+Implement a progress file so we can pick up a failed scan, and complete it without starting all over.
