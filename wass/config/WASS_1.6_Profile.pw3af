@@ -1,0 +1,387 @@
+[audit.blind_sqli]
+eq_limit = 0.9
+
+[audit.cors_origin]
+origin_header_value = http://w3af.org/
+
+[audit.csrf]
+
+[audit.dav]
+
+[audit.eval]
+use_time_delay = True
+use_echo = True
+
+[audit.file_upload]
+extensions = gif,jsp,php,php2,php3,php4,php5,asp,aspx,pl,cfm,rb,py,sh,ksh,csh,bat,ps,exe,png,pdf
+
+[audit.format_string]
+
+[audit.frontpage]
+
+[audit.generic]
+diff_ratio = 0.3
+
+[audit.global_redirect]
+
+[audit.htaccess_methods]
+
+[audit.ldapi]
+
+[audit.lfi]
+
+[audit.mx_injection]
+
+[audit.os_commanding]
+
+[audit.phishing_vector]
+
+[audit.preg_replace]
+
+[audit.response_splitting]
+
+[audit.rfi]
+
+[audit.sqli]
+
+[audit.ssi]
+
+[audit.ssl_certificate]
+minExpireDays = 30
+caFileName = /opt/w3af/w3af/plugins/audit/ssl_certificate/ca.pem
+
+[audit.un_ssl]
+
+[audit.xpath]
+
+[audit.xst]
+
+[audit.xss]
+persistent_xss = True
+
+[bruteforce.basic_auth]
+profilingNumber = 50
+useLeetPasswd = True
+useProfiling = True
+useEmails = True
+comboSeparator = :
+passEqUser = True
+passwdFile = /opt/w3af/w3af/core/controllers/bruteforce/passwords.txt
+comboFile = /opt/w3af/w3af/core/controllers/bruteforce/combo.txt
+usersFile = /opt/w3af/w3af/core/controllers/bruteforce/users.txt
+stopOnFirst = True
+useSvnUsers = True
+
+[bruteforce.form_auth]
+profilingNumber = 50
+useLeetPasswd = True
+useProfiling = True
+useEmails = True
+comboSeparator = :
+passEqUser = True
+passwdFile = /opt/w3af/w3af/core/controllers/bruteforce/passwords.txt
+comboFile = /opt/w3af/w3af/core/controllers/bruteforce/combo.txt
+usersFile = /opt/w3af/w3af/core/controllers/bruteforce/users.txt
+stopOnFirst = True
+useSvnUsers = True
+
+#[crawl.archive_dot_org]
+#max_depth = 3
+
+[crawl.bing_spider]
+result_limit = 300
+
+[crawl.content_negotiation]
+wordlist = /opt/w3af/w3af/plugins/crawl/content_negotiation/common_filenames.db
+
+[crawl.digit_sum]
+fuzzImages = False
+maxDigitSections = 4
+
+[crawl.dir_file_bruter]
+file_wordlist = /opt/w3af/w3af/plugins/crawl/dir_file_bruter/common_files_small.db
+bf_files = True
+bf_directories = True
+dir_wordlist = /opt/w3af/w3af/plugins/crawl/dir_file_bruter/common_dirs_small.db
+be_recursive = False
+
+[crawl.dot_listing]
+
+[crawl.find_backdoors]
+
+[crawl.find_captchas]
+
+[crawl.find_dvcs]
+
+[crawl.genexus_xml]
+
+[crawl.ghdb]
+result_limit = 300
+
+[crawl.google_spider]
+result_limit = 300
+
+#[crawl.import_results]
+# input_csv =
+# input_burp =
+
+[crawl.oracle_discovery]
+
+[crawl.phishtank]
+
+[crawl.phpinfo]
+
+[crawl.pykto]
+admin_dirs = /admin/,/adm/
+db_file = /opt/w3af/w3af/plugins/crawl/pykto/scan_database.db
+nuke_dirs = /,/postnuke/,/postnuke/html/,/modules/,/phpBB/,/forum/
+cgi_dirs = /cgi-bin/
+mutate_tests = False
+extra_db_file = /opt/w3af/w3af/plugins/crawl/pykto/w3af_scan_database.db
+
+[crawl.ria_enumerator]
+wordlist = /opt/w3af/w3af/plugins/crawl/ria_enumerator/common_filenames.db
+manifestExtensions = ,.php,.json,.txt,.gears
+
+[crawl.robots_txt]
+
+[crawl.sitemap_xml]
+
+[crawl.spider_man]
+listen_address = 127.0.0.1
+listen_port = 44444
+
+[crawl.url_fuzzer]
+fuzz_images = False
+
+[crawl.urllist_txt]
+
+[crawl.user_dir]
+identify_os = True
+identify_apps = True
+
+#[crawl.web_diff]
+#content= True
+#local_dir =
+#banned_ext = asp,jsp,php
+#remote_url_path = http://host.tld/
+
+[crawl.web_spider]
+only_forward = False
+ignore_regex = (?i)(logout|disconnect|signout|exit)+
+follow_regex = .*
+
+[crawl.wordnet]
+wn_results = 5
+
+[crawl.wordpress_enumerate_users]
+
+[crawl.wordpress_fingerprint]
+
+[crawl.wordpress_fullpathdisclosure]
+
+[crawl.wsdl_finder]
+
+[evasion.backspace_between_dots]
+
+[evasion.full_width_encode]
+
+[evasion.mod_security]
+
+[evasion.reversed_slashes]
+
+[evasion.rnd_case]
+
+[evasion.rnd_hex_encode]
+
+[evasion.rnd_param]
+
+[evasion.rnd_path]
+
+[evasion.self_reference]
+
+[evasion.shift_out_in_between_dots]
+
+[evasion.x_forwarded_for]
+
+[grep.ajax]
+
+[grep.analyze_cookies]
+
+[grep.blank_body]
+
+[grep.cache_control]
+
+[grep.clamav]
+clamd_socket = /tmp/clamd.socket
+
+[grep.click_jacking]
+
+[grep.code_disclosure]
+
+[grep.credit_cards]
+
+[grep.cross_domain_js]
+
+[grep.csp]
+
+[grep.directory_indexing]
+
+[grep.dom_xss]
+
+[grep.dot_net_event_validation]
+
+[grep.error_500]
+
+[grep.error_pages]
+
+[grep.feeds]
+
+[grep.file_upload]
+
+[grep.form_autocomplete]
+
+[grep.get_emails]
+only_target_domain = True
+
+[grep.hash_analysis]
+
+[grep.html_comments]
+
+[grep.http_auth_detect]
+
+[grep.http_in_body]
+
+[grep.lang]
+
+[grep.meta_tags]
+
+[grep.motw]
+
+[grep.objects]
+
+[grep.oracle]
+
+[grep.password_profiling]
+
+[grep.path_disclosure]
+
+[grep.private_ip]
+
+[grep.ssn]
+
+[grep.strange_headers]
+
+[grep.strange_http_codes]
+
+[grep.strange_parameters]
+
+[grep.strange_reason]
+
+[grep.svn_users]
+
+[grep.symfony]
+override = False
+
+[grep.url_session]
+
+#[grep.user_defined_regex]
+#single_regex =
+#regex_file_path = /opt/w3af/w3af/plugins/grep/user_defined_regex/empty.txt
+
+[grep.wsdl_greper]
+
+[grep.xss_protection_header]
+
+[infrastructure.afd]
+
+[infrastructure.allowed_methods]
+reportDavOnly = True
+execOneTime = True
+
+[infrastructure.detect_reverse_proxy]
+
+[infrastructure.detect_transparent_proxy]
+
+[infrastructure.dns_wildcard]
+
+[infrastructure.domain_dot]
+
+[infrastructure.dot_net_errors]
+
+[infrastructure.favicon_identification]
+
+[infrastructure.find_jboss]
+
+[infrastructure.find_vhosts]
+
+[infrastructure.finger_bing]
+result_limit = 300
+
+[infrastructure.finger_google]
+fast_search = False
+result_limit = 300
+
+[infrastructure.finger_pks]
+
+[infrastructure.fingerprint_WAF]
+
+[infrastructure.fingerprint_os]
+
+[infrastructure.frontpage_version]
+
+[infrastructure.halberd]
+
+[infrastructure.hmap]
+gen_fingerprint = True
+
+[infrastructure.php_eggs]
+
+[infrastructure.server_header]
+
+[infrastructure.server_status]
+
+[infrastructure.shared_hosting]
+result_limit = 300
+
+[infrastructure.xssed_dot_com]
+
+[infrastructure.zone_h]
+
+[infrastructure.zone_h]
+
+[http-settings]
+url_parameter = 
+timeout = 60
+headers_file = 
+cookie_jar_file = 
+ignore_session_cookies = False
+ntlm_auth_url =
+ntlm_auth_user = 
+ntlm_auth_passwd = 
+ntlm_auth_domain =
+max_file_size = 400000
+max_http_retries = 2
+user_agent = w3af.sourceforge.net
+string_match_404 = 
+always_404 = 
+never_404 = 
+proxy_port =
+proxy_address =
+ignore_session_cookies = False
+basic_auth_user = 
+basic_auth_passwd = 
+basic_auth_domain =
+
+[misc-settings]
+msf_location= /opt/metasploit/apps/pro/msf3
+max_discovery_time = 120
+stop_on_first_exception = False
+non_targets = 
+fuzz_url_filenames = True
+fuzz_url_parts = True
+fuzzable_headers = 
+fuzzed_files_extension = gif
+form_fuzzing_mode = tmb
+fuzz_form_files = True
+fuzz_cookies = True

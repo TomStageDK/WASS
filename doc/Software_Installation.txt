@@ -1,0 +1,19 @@
+TODO: implement installation information for all the tools used by WASS on a CentOS 6.x system.
+
+This document will describe how to install the different software, on CentOS 6.x, that is used by WASS.
+
+Joomscan:
+	Download the latest version of Joomscan from: http://sourceforge.net/projects/joomscan/files/joomscan/latest/
+	You could use these commands:
+	cd /tmp
+	wget http://sourceforge.net/projects/joomscan/files/joomscan/latest/joomscan-latest.zip
+	cd /opt
+	unzip /tmp/joomscan-latest.zip .
+	cd joomscan-latest
+	chmod 755 joomscan.pl
+	
+	Joomscan is dependent on some other Perl modules, so install them:
+	yum install perl-WWW-Mechanize.noarch perl-Time-Piece.x86_64 -y
+	
+	You should now be able to run the Joomscan software.
+

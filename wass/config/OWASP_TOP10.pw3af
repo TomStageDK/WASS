@@ -1,0 +1,249 @@
+[audit.frontpage]
+
+[audit.eval]
+use_time_delay = True
+use_echo = True
+
+[audit.blind_sqli]
+eq_limit = 0.9
+
+[audit.phishing_vector]
+
+[audit.csrf]
+
+[audit.mx_injection]
+
+[audit.preg_replace]
+
+[audit.lfi]
+
+[audit.ldapi]
+
+[audit.un_ssl]
+
+[audit.ssl_certificate]
+minExpireDays = 30
+caFileName = w3af/plugins/audit/ssl_certificate/ca.pem
+
+[audit.os_commanding]
+
+[audit.ssi]
+
+[audit.sqli]
+
+[audit.buffer_overflow]
+
+[audit.xpath]
+
+[audit.generic]
+diff_ratio = 0.35
+
+[audit.htaccess_methods]
+
+[audit.rfi]
+use_w3af_site = True
+listen_address = 
+listen_port = 44449
+
+[audit.response_splitting]
+
+[audit.dav]
+
+[audit.format_string]
+
+[audit.global_redirect]
+
+[audit.xst]
+
+[audit.xss]
+persistent_xss = True
+
+[audit.file_upload]
+extensions = gif,html
+
+[audit.redos]
+
+[crawl.web_spider]
+follow_regex = .*
+ignore_regex = None
+only_forward = False
+
+[crawl.sitemap_xml]
+
+[crawl.user_dir]
+identify_os = True
+identify_apps = True
+
+[crawl.oracle_discovery]
+
+[crawl.robots_txt]
+
+[crawl.phishtank]
+
+[crawl.bing_spider]
+result_limit = 300
+
+[crawl.web_spider]
+
+[crawl.phpinfo]
+
+[grep.motw]
+
+[grep.credit_cards]
+
+[grep.feeds]
+
+[grep.path_disclosure]
+
+[grep.hash_analysis]
+
+[grep.strange_headers]
+
+[grep.dot_net_event_validation]
+
+[grep.directory_indexing]
+
+[grep.analyze_cookies]
+
+[grep.get_emails]
+only_target_domain = True
+
+[grep.oracle]
+
+[grep.meta_tags]
+
+[grep.strange_http_codes]
+
+[grep.http_in_body]
+
+[grep.file_upload]
+
+[grep.ajax]
+
+[grep.error_500]
+
+[grep.lang]
+
+[grep.objects]
+
+[grep.dom_xss]
+
+[grep.wsdl_greper]
+
+[grep.http_auth_detect]
+
+[grep.svn_users]
+
+[grep.password_profiling]
+
+[grep.blank_body]
+
+[grep.error_pages]
+
+[grep.strange_parameters]
+
+[grep.html_comments]
+
+[grep.ssn]
+
+[grep.code_disclosure]
+
+[grep.private_ip]
+
+[grep.symfony]
+
+[grep.form_autocomplete]
+
+[grep.click_jacking]
+
+[grep.strange_reason]
+
+[infrastructure.allowed_methods]
+reportDavOnly = True
+execOneTime = False
+
+[infrastructure.halberd]
+
+[infrastructure.dns_wildcard]
+
+[infrastructure.detect_transparent_proxy]
+
+[infrastructure.fingerprint_os]
+
+[infrastructure.afd]
+
+[infrastructure.dot_net_errors]
+
+[infrastructure.shared_hosting]
+result_limit = 300
+
+[infrastructure.server_header]
+
+[infrastructure.fingerprint_WAF]
+
+[infrastructure.detect_reverse_proxy]
+
+[infrastructure.server_status]
+
+[infrastructure.hmap]
+gen_fingerprint = False
+
+[infrastructure.find_vhosts]
+
+[infrastructure.php_eggs]
+
+[infrastructure.allowed_methods]
+
+[infrastructure.server_header]
+
+[misc-settings]
+maxThreads = 15
+form_fuzzing_mode = tmb
+fuzzed_files_extension = gif
+autoDependencies = True
+demo = False
+fuzzable_headers = 
+showProgressBar = True
+fuzzCookie = False
+fuzz_form_files = True
+fuzz_url_filenames = False
+max_discovery_time = 120
+non_targets = 
+fuzz_url_parts = False
+stop_on_first_exception = False
+interface = ppp0
+local_ip_address = 10.5.6.18
+msf_location = /opt/metasploit3/bin/
+
+[http-settings]
+proxy_port = 8080
+url_parameter = 
+never_404 = 
+headers_file = 
+maxFileSize = 400000
+proxy_address = 
+basic_auth_domain = 
+always_404 = 
+max_http_retries = 2
+ntlm_auth_user = 
+ntlm_auth_passwd = 
+ignore_session_cookies = False
+timeout = 10
+user_agent = w3af.org
+basic_auth_user = 
+basic_auth_passwd = 
+string_match_404 = 
+cookie_jar_file = 
+ntlm_auth_domain = 
+ntlm_auth_url = 
+
+[target]
+target = 
+
+[output.console]
+verbose = True
+
+[profile]
+description = The Open Web Application Security Project (OWASP) is a worldwide free and open community focused on improving the security of application software. OWASP searched for and published the ten most common security flaws. This profile search for this top 10 security flaws. For more information about the security flaws: http://www.owasp.org/index.php/OWASP_Top_Ten_Project .
+name = OWASP_TOP10
+

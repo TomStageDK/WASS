@@ -1,0 +1,433 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="wass_report.xsl" type="text/xsl"?>
+<WASS SpecVersion="0.1">
+    <WASS-version>0.1.1</WASS-version>
+    <WASS-arguments>Arguments used to perform the scan</WASS-arguments>
+    <WASS-Date-time>Sun Apr 27 11:36:14 2014</WASS-Date-time>
+    <WASS-Target>testphp.vulnweb.com</WASS-Target>
+    <WASS-Done-by>Tom Stage [tom.stage@aramatech.dk]</WASS-Done-by>
+	<Tool-Session> <!-- multiple -->
+	    <!-- Note that most of the elements will probably be optional-->
+	    <Session-reference>Product specific reference</Session-reference>
+	    <Tool-name>W3af</Tool-name>
+	    <Tool-version>Version of the tool that found the issue</Tool-version>
+	    <Tool-parameters>Parameters used to perform the scan</Tool-parameters>
+	    <Date-time>Date and time the session was started</Date-time>
+	    <Summary>A sort (one line) description</Summary>
+	    <Description>More detailed description</Description>
+			<Site>
+		    <Host name="testphp.vulnweb.com" ip-address="1.1.1.1">
+			    <Port protocol="tcp" portid="80"> <!-- multiple -->
+						<Service name="http" product="Apache httpd 2.2.3" version="1.0" />
+						<Vulnerability Severity="CRITICAL"> <!-- multiple -->
+							<Finding NativeID="12345" IdentifiedTimestamp="12/14/2010 3:42:16 AM -06:00">
+						    <Summary>A sort (one line) description</Summary>
+						    <Description>More detailed description</Description>
+						    <Further-info>More information about this specific issue</Further-info>
+						    <Severity>One of an agreed list of values</Severity>
+						    <Confidence>One of an agreed list of values</Confidence>
+						    <Background>More info on the type of issue</Background>
+						    <Remediation>Advise on how to fix the issue</Remediation>
+						    <classification type="the scoring system 1" id="The calssification from the scoring system 1" /> <!-- multiple -->
+						    <classification type="the scoring system 2" id="The calssification from the scoring system 2" /> <!-- multiple -->
+						    <classification type="the scoring system 3" id="The calssification from the scoring system 3" /> <!-- multiple -->
+						    <classification type="the scoring system 4" id="The calssification from the scoring system 4" /> <!-- multiple -->
+								<Pages> <!-- optional -->
+									<Page>
+									    <Page-reference>Product specific reference</Page-reference>
+									    <Method>HTTP method (GET, POST, etc)</Method>
+									    <URL>The actual URL</URL>
+											<Parameters>
+											    <Parameter>The parameter</Parameter> <!-- multiple -->
+											</Parameters>
+											<Request-response>
+											    <Page-reference>Product specific reference</Page-reference>
+											    <Request>The request</Request>
+											    <Response>The response</Response>
+											</Request-response>
+									</Page>
+								</Pages>
+							</Finding>
+						</Vulnerability>
+						<Vulnerability Severity="CRITICAL"> <!-- multiple -->
+							<Finding NativeID="12345" IdentifiedTimestamp="12/14/2010 3:42:16 AM -06:00">
+						    <Summary>A sort (one line) description</Summary>
+						    <Description>More detailed description</Description>
+						    <Further-info>More information about this specific issue</Further-info>
+						    <Severity>One of an agreed list of values</Severity>
+						    <Confidence>One of an agreed list of values</Confidence>
+						    <Background>More info on the type of issue</Background>
+						    <Remediation>Advise on how to fix the issue</Remediation>
+						    <classification type="the scoring system 1" id="The calssification from the scoring system 1" /> <!-- multiple -->
+						    <classification type="the scoring system 2" id="The calssification from the scoring system 2" /> <!-- multiple -->
+						    <classification type="the scoring system 3" id="The calssification from the scoring system 3" /> <!-- multiple -->
+						    <classification type="the scoring system 4" id="The calssification from the scoring system 4" /> <!-- multiple -->
+								<Pages> <!-- optional -->
+									<Page>
+									    <Page-reference>Product specific reference</Page-reference>
+									    <Method>HTTP method (GET, POST, etc)</Method>
+									    <URL>The actual URL</URL>
+										<Parameters>
+										    <Parameter>The parameter</Parameter> <!-- multiple -->
+										</Parameters>
+										<Request-response>
+										    <Page-reference>Product specific reference</Page-reference>
+										    <Request>The request</Request>
+										    <Response>The response</Response>
+										</Request-response>
+									</Page>
+								</Pages>
+							</Finding>
+						</Vulnerability>
+						<Vulnerability Severity="HIGH"> <!-- multiple -->
+							<Finding NativeID="12345" IdentifiedTimestamp="12/14/2010 3:42:16 AM -06:00">
+						    <Summary>A sort (one line) description</Summary>
+						    <Description>More detailed description</Description>
+						    <Further-info>More information about this specific issue</Further-info>
+						    <Severity>One of an agreed list of values</Severity>
+						    <Confidence>One of an agreed list of values</Confidence>
+						    <Background>More info on the type of issue</Background>
+						    <Remediation>Advise on how to fix the issue</Remediation>
+						    <classification type="the scoring system" id="The calssification from the scoring system" /> <!-- multiple -->
+								<Pages> <!-- optional -->
+									<Page>
+									    <Page-reference>Product specific reference</Page-reference>
+									    <Method>HTTP method (GET, POST, etc)</Method>
+									    <URL>The actual URL</URL>
+										<Parameters>
+										    <Parameter>The parameter</Parameter> <!-- multiple -->
+										</Parameters>
+										<Request-response>
+										    <Page-reference>Product specific reference</Page-reference>
+										    <Request>The request</Request>
+										    <Response>The response</Response>
+										</Request-response>
+									</Page>
+								</Pages>
+							</Finding>
+						</Vulnerability>
+						<Vulnerability Severity="MEDIUM"> <!-- multiple -->
+							<Finding NativeID="12345" IdentifiedTimestamp="12/14/2010 3:42:16 AM -06:00">
+						    <Summary>A sort (one line) description</Summary>
+						    <Description>More detailed description</Description>
+						    <Further-info>More information about this specific issue</Further-info>
+						    <Severity>One of an agreed list of values</Severity>
+						    <Confidence>One of an agreed list of values</Confidence>
+						    <Background>More info on the type of issue</Background>
+						    <Remediation>Advise on how to fix the issue</Remediation>
+						    <classification type="the scoring system" id="The calssification from the scoring system" /> <!-- multiple -->
+								<Pages> <!-- optional -->
+									<Page>
+									    <Page-reference>Product specific reference</Page-reference>
+									    <Method>HTTP method (GET, POST, etc)</Method>
+									    <URL>The actual URL</URL>
+										<Parameters>
+										    <Parameter>The parameter</Parameter> <!-- multiple -->
+										</Parameters>
+										<Request-response>
+										    <Page-reference>Product specific reference</Page-reference>
+										    <Request>The request</Request>
+										    <Response>The response</Response>
+										</Request-response>
+									</Page>
+								</Pages>
+							</Finding>
+						</Vulnerability>
+						<Vulnerability Severity="LOW"> <!-- multiple -->
+							<Finding NativeID="12345" IdentifiedTimestamp="12/14/2010 3:42:16 AM -06:00">
+						    <Summary>A sort (one line) description</Summary>
+						    <Description>More detailed description</Description>
+						    <Further-info>More information about this specific issue</Further-info>
+						    <Severity>One of an agreed list of values</Severity>
+						    <Confidence>One of an agreed list of values</Confidence>
+						    <Background>More info on the type of issue</Background>
+						    <Remediation>Advise on how to fix the issue</Remediation>
+						    <classification type="the scoring system" id="The calssification from the scoring system" /> <!-- multiple -->
+								<Pages> <!-- optional -->
+									<Page>
+									    <Page-reference>Product specific reference</Page-reference>
+									    <Method>HTTP method (GET, POST, etc)</Method>
+									    <URL>The actual URL</URL>
+										<Parameters>
+										    <Parameter>The parameter</Parameter> <!-- multiple -->
+										</Parameters>
+										<Request-response>
+										    <Page-reference>Product specific reference</Page-reference>
+										    <Request>The request</Request>
+										    <Response>The response</Response>
+										</Request-response>
+									</Page>
+								</Pages>
+							</Finding>
+						</Vulnerability>
+						<Vulnerability Severity="INFORMATIONAL"> <!-- multiple -->
+							<Finding NativeID="12345" IdentifiedTimestamp="12/14/2010 3:42:16 AM -06:00">
+						    <Summary>A sort (one line) description</Summary>
+						    <Description>More detailed description</Description>
+						    <Further-info>More information about this specific issue</Further-info>
+						    <Severity>One of an agreed list of values</Severity>
+						    <Confidence>One of an agreed list of values</Confidence>
+						    <Background>More info on the type of issue</Background>
+						    <Remediation>Advise on how to fix the issue</Remediation>
+						    <classification type="the scoring system" id="The calssification from the scoring system" /> <!-- multiple -->
+								<Pages> <!-- optional -->
+									<Page>
+									    <Page-reference>Product specific reference</Page-reference>
+									    <Method>HTTP method (GET, POST, etc)</Method>
+									    <URL>The actual URL</URL>
+										<Parameters>
+										    <Parameter>The parameter</Parameter> <!-- multiple -->
+										</Parameters>
+										<Request-response>
+										    <Page-reference>Product specific reference</Page-reference>
+										    <Request>The request</Request>
+										    <Response>The response</Response>
+										</Request-response>
+									</Page>
+								</Pages>
+							</Finding>
+						</Vulnerability>
+						<Vulnerability Severity="BESTPRACTIES"> <!-- multiple -->
+							<Finding NativeID="12345" IdentifiedTimestamp="12/14/2010 3:42:16 AM -06:00">
+						    <Summary>A sort (one line) description</Summary>
+						    <Description>More detailed description</Description>
+						    <Further-info>More information about this specific issue</Further-info>
+						    <Severity>One of an agreed list of values</Severity>
+						    <Confidence>One of an agreed list of values</Confidence>
+						    <Background>More info on the type of issue</Background>
+						    <Remediation>Advise on how to fix the issue</Remediation>
+						    <classification type="the scoring system" id="The calssification from the scoring system" /> <!-- multiple -->
+								<Pages> <!-- optional -->
+									<Page>
+									    <Page-reference>Product specific reference</Page-reference>
+									    <Method>HTTP method (GET, POST, etc)</Method>
+									    <URL>The actual URL</URL>
+										<Parameters>
+										    <Parameter>The parameter</Parameter> <!-- multiple -->
+										</Parameters>
+										<Request-response>
+										    <Page-reference>Product specific reference</Page-reference>
+										    <Request>The request</Request>
+										    <Response>The response</Response>
+										</Request-response>
+									</Page>
+								</Pages>
+							</Finding>
+						</Vulnerability>
+					</Port>
+				</Host>
+		</Site>
+	</Tool-Session>
+	<Tool-Session> <!-- multiple -->
+	    <!-- Note that most of the elements will probably be optional-->
+	    <Session-reference>Product specific reference</Session-reference>
+	    <Tool-name>Wapiti</Tool-name>
+	    <Tool-version>Version of the tool that found the issue</Tool-version>
+	    <Tool-parameters>Parameters used to perform the scan</Tool-parameters>
+	    <Date-time>Date and time the session was started</Date-time>
+	    <Summary>A sort (one line) description</Summary>
+	    <Description>More detailed description</Description>
+			<Site>
+		    <Host name="Hostname" ip-address="1.1.1.1"> <!-- multiple -->
+			    <Port protocol="tcp / udp" portid="80"> <!-- multiple -->
+						<Service name="http" product="Apache httpd 2.2.3" version="1.0" />
+						<Vulnerability Severity="CRITICAL"> <!-- multiple -->
+							<Finding NativeID="12345" IdentifiedTimestamp="12/14/2010 3:42:16 AM -06:00">
+						    <Summary>A sort (one line) description</Summary>
+						    <Description>More detailed description</Description>
+						    <Further-info>More information about this specific issue</Further-info>
+						    <Severity>One of an agreed list of values</Severity>
+						    <Confidence>One of an agreed list of values</Confidence>
+						    <Background>More info on the type of issue</Background>
+						    <Remediation>Advise on how to fix the issue</Remediation>
+						    <classification type="the scoring system 1" id="The calssification from the scoring system 1" /> <!-- multiple -->
+						    <classification type="the scoring system 2" id="The calssification from the scoring system 2" /> <!-- multiple -->
+						    <classification type="the scoring system 3" id="The calssification from the scoring system 3" /> <!-- multiple -->
+						    <classification type="the scoring system 4" id="The calssification from the scoring system 4" /> <!-- multiple -->
+								<Pages> <!-- optional -->
+									<Page>
+									    <Page-reference>Product specific reference</Page-reference>
+									    <Method>HTTP method (GET, POST, etc)</Method>
+									    <URL>The actual URL</URL>
+											<Parameters>
+											    <Parameter>The parameter</Parameter> <!-- multiple -->
+											</Parameters>
+											<Request-response>
+											    <Page-reference>Product specific reference</Page-reference>
+											    <Request>The request</Request>
+											    <Response>The response</Response>
+											</Request-response>
+									</Page>
+								</Pages>
+							</Finding>
+						</Vulnerability>
+						<Vulnerability Severity="CRITICAL"> <!-- multiple -->
+							<Finding NativeID="12345" IdentifiedTimestamp="12/14/2010 3:42:16 AM -06:00">
+						    <Summary>A sort (one line) description</Summary>
+						    <Description>More detailed description</Description>
+						    <Further-info>More information about this specific issue</Further-info>
+						    <Severity>One of an agreed list of values</Severity>
+						    <Confidence>One of an agreed list of values</Confidence>
+						    <Background>More info on the type of issue</Background>
+						    <Remediation>Advise on how to fix the issue</Remediation>
+						    <classification type="the scoring system 1" id="The calssification from the scoring system 1" /> <!-- multiple -->
+						    <classification type="the scoring system 2" id="The calssification from the scoring system 2" /> <!-- multiple -->
+						    <classification type="the scoring system 3" id="The calssification from the scoring system 3" /> <!-- multiple -->
+						    <classification type="the scoring system 4" id="The calssification from the scoring system 4" /> <!-- multiple -->
+								<Pages> <!-- optional -->
+									<Page>
+									    <Page-reference>Product specific reference</Page-reference>
+									    <Method>HTTP method (GET, POST, etc)</Method>
+									    <URL>The actual URL</URL>
+										<Parameters>
+										    <Parameter>The parameter</Parameter> <!-- multiple -->
+										</Parameters>
+										<Request-response>
+										    <Page-reference>Product specific reference</Page-reference>
+										    <Request>The request</Request>
+										    <Response>The response</Response>
+										</Request-response>
+									</Page>
+								</Pages>
+							</Finding>
+						</Vulnerability>
+						<Vulnerability Severity="HIGH"> <!-- multiple -->
+							<Finding NativeID="12345" IdentifiedTimestamp="12/14/2010 3:42:16 AM -06:00">
+						    <Summary>A sort (one line) description</Summary>
+						    <Description>More detailed description</Description>
+						    <Further-info>More information about this specific issue</Further-info>
+						    <Severity>One of an agreed list of values</Severity>
+						    <Confidence>One of an agreed list of values</Confidence>
+						    <Background>More info on the type of issue</Background>
+						    <Remediation>Advise on how to fix the issue</Remediation>
+						    <classification type="the scoring system" id="The calssification from the scoring system" /> <!-- multiple -->
+								<Pages> <!-- optional -->
+									<Page>
+									    <Page-reference>Product specific reference</Page-reference>
+									    <Method>HTTP method (GET, POST, etc)</Method>
+									    <URL>The actual URL</URL>
+										<Parameters>
+										    <Parameter>The parameter</Parameter> <!-- multiple -->
+										</Parameters>
+										<Request-response>
+										    <Page-reference>Product specific reference</Page-reference>
+										    <Request>The request</Request>
+										    <Response>The response</Response>
+										</Request-response>
+									</Page>
+								</Pages>
+							</Finding>
+						</Vulnerability>
+						<Vulnerability Severity="MEDIUM"> <!-- multiple -->
+							<Finding NativeID="12345" IdentifiedTimestamp="12/14/2010 3:42:16 AM -06:00">
+						    <Summary>A sort (one line) description</Summary>
+						    <Description>More detailed description</Description>
+						    <Further-info>More information about this specific issue</Further-info>
+						    <Severity>One of an agreed list of values</Severity>
+						    <Confidence>One of an agreed list of values</Confidence>
+						    <Background>More info on the type of issue</Background>
+						    <Remediation>Advise on how to fix the issue</Remediation>
+						    <classification type="the scoring system" id="The calssification from the scoring system" /> <!-- multiple -->
+								<Pages> <!-- optional -->
+									<Page>
+									    <Page-reference>Product specific reference</Page-reference>
+									    <Method>HTTP method (GET, POST, etc)</Method>
+									    <URL>The actual URL</URL>
+										<Parameters>
+										    <Parameter>The parameter</Parameter> <!-- multiple -->
+										</Parameters>
+										<Request-response>
+										    <Page-reference>Product specific reference</Page-reference>
+										    <Request>The request</Request>
+										    <Response>The response</Response>
+										</Request-response>
+									</Page>
+								</Pages>
+							</Finding>
+						</Vulnerability>
+						<Vulnerability Severity="LOW"> <!-- multiple -->
+							<Finding NativeID="12345" IdentifiedTimestamp="12/14/2010 3:42:16 AM -06:00">
+						    <Summary>A sort (one line) description</Summary>
+						    <Description>More detailed description</Description>
+						    <Further-info>More information about this specific issue</Further-info>
+						    <Severity>One of an agreed list of values</Severity>
+						    <Confidence>One of an agreed list of values</Confidence>
+						    <Background>More info on the type of issue</Background>
+						    <Remediation>Advise on how to fix the issue</Remediation>
+						    <classification type="the scoring system" id="The calssification from the scoring system" /> <!-- multiple -->
+								<Pages> <!-- optional -->
+									<Page>
+									    <Page-reference>Product specific reference</Page-reference>
+									    <Method>HTTP method (GET, POST, etc)</Method>
+									    <URL>The actual URL</URL>
+										<Parameters>
+										    <Parameter>The parameter</Parameter> <!-- multiple -->
+										</Parameters>
+										<Request-response>
+										    <Page-reference>Product specific reference</Page-reference>
+										    <Request>The request</Request>
+										    <Response>The response</Response>
+										</Request-response>
+									</Page>
+								</Pages>
+							</Finding>
+						</Vulnerability>
+						<Vulnerability Severity="INFORMATIONAL"> <!-- multiple -->
+							<Finding NativeID="12345" IdentifiedTimestamp="12/14/2010 3:42:16 AM -06:00">
+						    <Summary>A sort (one line) description</Summary>
+						    <Description>More detailed description</Description>
+						    <Further-info>More information about this specific issue</Further-info>
+						    <Severity>One of an agreed list of values</Severity>
+						    <Confidence>One of an agreed list of values</Confidence>
+						    <Background>More info on the type of issue</Background>
+						    <Remediation>Advise on how to fix the issue</Remediation>
+						    <classification type="the scoring system" id="The calssification from the scoring system" /> <!-- multiple -->
+								<Pages> <!-- optional -->
+									<Page>
+									    <Page-reference>Product specific reference</Page-reference>
+									    <Method>HTTP method (GET, POST, etc)</Method>
+									    <URL>The actual URL</URL>
+										<Parameters>
+										    <Parameter>The parameter</Parameter> <!-- multiple -->
+										</Parameters>
+										<Request-response>
+										    <Page-reference>Product specific reference</Page-reference>
+										    <Request>The request</Request>
+										    <Response>The response</Response>
+										</Request-response>
+									</Page>
+								</Pages>
+							</Finding>
+						</Vulnerability>
+						<Vulnerability Severity="BESTPRACTIES"> <!-- multiple -->
+							<Finding NativeID="12345" IdentifiedTimestamp="12/14/2010 3:42:16 AM -06:00">
+						    <Summary>A sort (one line) description</Summary>
+						    <Description>More detailed description</Description>
+						    <Further-info>More information about this specific issue</Further-info>
+						    <Severity>One of an agreed list of values</Severity>
+						    <Confidence>One of an agreed list of values</Confidence>
+						    <Background>More info on the type of issue</Background>
+						    <Remediation>Advise on how to fix the issue</Remediation>
+						    <classification type="the scoring system" id="The calssification from the scoring system" /> <!-- multiple -->
+								<Pages> <!-- optional -->
+									<Page>
+									    <Page-reference>Product specific reference</Page-reference>
+									    <Method>HTTP method (GET, POST, etc)</Method>
+									    <URL>The actual URL</URL>
+										<Parameters>
+										    <Parameter>The parameter</Parameter> <!-- multiple -->
+										</Parameters>
+										<Request-response>
+										    <Page-reference>Product specific reference</Page-reference>
+										    <Request>The request</Request>
+										    <Response>The response</Response>
+										</Request-response>
+									</Page>
+								</Pages>
+							</Finding>
+						</Vulnerability>
+					</Port>
+				</Host>
+		</Site>
+	</Tool-Session>
+</WASS>

@@ -1,0 +1,398 @@
+/* WASS style sheet for WASS - Report      */
+/* written by Tom Stage, May 2014          */
+
+html { 
+  margin: 0;
+  font: 10pt/1.26 "Gill Sans", sans-serif;
+}
+
+body { 
+  margin: 0 0 0 0;
+}
+
+h1, h2, h3, h4, h5, h6 { 
+  font-family: "Gill Sans", sans-serif;
+  margin: 2em 0 0.5em 0;
+  page-break-after: avoid;
+} 
+
+h1 { 
+  padding: 2em 0 2em 0;
+  margin: 0;
+  font-size: 2.4em;
+  font-weight: 900;
+}
+
+h2 { 
+  font-size: 1.2em;
+  /*text-transform: uppercase;*/
+  font-weight: bold;
+}
+
+h3 { 
+  font-size: 1em;
+  font-weight: bold;
+}
+
+q::before {
+  content: "\201C";
+}
+
+q::after {
+  content: "\201D";
+}
+
+p { margin: 0 }
+p + p { text-indent: 1.3em }
+
+p.author {
+  margin-top: 2em;
+  text-indent: 0;
+  text-align: right;
+}
+
+pre {  margin: 1em 1.3em; }
+
+a { text-decoration: none; color: black }
+
+/* figures and tables*/
+
+div.figure {
+  margin: 1em 0;
+  counter-increment: figure;
+}
+
+div.figure .caption, div.table .caption {
+  float: left;
+  clear: left;
+  width: 37%;
+  text-align: right;
+  font-size: 0.9em;
+  margin: 0 0 1.2em -40%;
+}
+
+div.figure .caption::before {
+  content: "Figure " counter(figure) ": ";
+  font-weight: bold;
+}
+
+div.table .caption::before {
+  content: "Table " counter(table) ": ";
+  font-weight: bold;
+}
+
+div.table {
+  margin: 1em 0;
+  counter-increment: table;
+}
+
+div.table th {
+  text-align: left;
+}
+
+table th, table td {
+  text-align: left;
+  padding-right: 1em;
+}
+
+table.lined td, table.lined th {
+  border-top: none;
+  border-bottom: thin dotted;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+}
+
+
+@page {
+  margin: 27mm 16mm 27mm 16mm;
+  size: 7in 9.25in;
+
+  @footnotes {
+    border-top: thin solid black;
+    padding-top: 0.3em;
+    margin-top: 0.6em;
+    margin-left: 30%;
+  }
+}
+
+
+/* define default page and names pages: cover, blank, frontmatter */
+
+@page :left {
+  @top-left {
+    font: 11pt "Gill Sans", serif;
+    content: "Web Application Security Scan Report";
+    vertical-align: bottom;
+    padding-bottom: 2em;
+  }
+
+  @bottom-left {
+    font: 11pt "Gill Sans", serif;
+    content: counter(page);
+    padding-top: 2em;
+    vertical-align: top;
+  }
+}
+
+@page :right {
+  @top-right {
+    font: 11pt "Gill Sans", serif;
+    content: string(header, first); 
+    vertical-align: bottom;
+    padding-bottom: 2em; 
+  }
+
+  @bottom-right {
+    font: 11pt "Gill Sans", serif;
+    content: counter(page);
+    text-align: right;
+    vertical-align: top;
+    padding-top: 2em;
+  }
+}
+
+@page frontmatter :left {
+  @top-left {
+    font: 11pt "Gill Sans", serif;
+    content: string(title);
+    vertical-align: bottom;
+    padding-bottom: 2em;
+  }
+
+  @bottom-left {
+    font: 11pt "Gill Sans", serif;
+    content: counter(page, lower-roman);
+    padding-top: 2em;
+    vertical-align: top;
+  }
+}
+
+@page cover { margin: 0; }
+
+@page frontmatter :right {
+  @top-right {
+    font: 11pt "Gill Sans", serif;
+    content: string(header, first); 
+    vertical-align: bottom;
+    padding-bottom: 2em; 
+  }
+
+  @bottom-right {
+    font: 11pt "Gill Sans", serif;
+    content: counter(page, lower-roman);
+    text-align: right;
+    vertical-align: top;
+    padding-top: 2em;
+  }
+}
+
+/* footnotes */
+
+.footnote {
+  display: none;                   /* default rule */
+
+  display: prince-footnote;        /* prince-specific rules */
+  position: footnote;
+  footnote-style-position: inside;
+
+  counter-increment: footnote;
+  margin-left: 1.4em;
+  font-size: 90%;
+  line-height: 1.4;
+}
+
+.footnote::footnote-call {
+  vertical-align: super;
+  font-size: 80%;
+}
+
+.footnote::footnote-marker {
+  vertical-align: super;
+  color: green;
+  padding-right: 0.4em;
+}
+
+
+/*
+   A report consists of different types of sections. I propose to use
+   DIV elements with these class names:
+
+    coverpage
+    toc: table of contents
+    summary: Contains the WASS Summary, Target Summary and Overall Summary
+    vulnerability_summary: Contains the Vulnerabilities summary information
+
+   A book will use several of the types listed above, but few books
+   will use all of them.
+*/
+
+/* which section uses which named page */
+
+div.toc { page: frontmatter }
+
+
+/* page breaks */
+
+div.coverpage, div.toc, div.summary, div.vulnerability_summary,
+div.critical_vulnerabilities, div.high_vulnerabilities,
+div.medium_vulnerabilities, div.low_vulnerabilities,
+div.informational_vulnerabilities, div.bestpracties_vulnerabilities{ 
+  page-break-after: always;
+}
+
+/*
+div.coverpage, div.toc, div.summary, div.vulnerability_summary{ 
+  page-break-before: always 
+}
+*/
+
+/* the front cover */
+
+div.coverpage { 
+	margin: 20% 20% 10% 10%; 
+}
+
+div.coverpage img {
+  position: relative;
+  /*padding: 4em 2em 0 0;*/
+  margin: auto;
+  width: 70%;
+}
+
+div.coverpage h1 {
+  position: relative;
+  margin: auto;
+  color: black;
+  font-size: 16pt;
+  font-weight: normal;
+}
+
+div.coverpage p {
+  position: relative;
+  margin: auto;
+  color: black;
+  font-size: 16pt;
+  font-weight: normal;
+}
+
+div.summary h1 {
+  position: relative;
+  margin: auto;
+  color: black;
+  font-size: 16pt;
+  /*padding: 1em 0 1em 0;*/
+  padding: 1em 0 0 0;
+  font-size: 2.4em;
+  font-weight: 900;
+}
+
+div.vulnerability_summary h1 {
+  position: relative;
+  margin: auto;
+  color: black;
+  font-size: 16pt;
+  /*padding: 1em 0 1em 0;*/
+  padding: 1em 0 0 0;
+  font-size: 2.4em;
+  font-weight: 900;
+}
+
+/* TOC */
+
+ul.toc, ul.toc ul { 
+  list-style-type: none;
+  margin: 0; padding: 0;
+}
+ul.toc ul {
+  margin-left: 1em;
+  font-weight: normal;
+}
+ul.toc > li { 
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+ul.toc a::after {
+  content: leader('.') target-counter(attr(href), page);
+  font-style: normal;
+}
+ul.toc > li.frontmatter a::after {
+  content: leader('.') target-counter(attr(href), page, lower-roman);
+  font-style: normal;
+}
+ul.toc > li.endmatter a::after {
+  content: leader('.') target-counter(attr(href), page);
+  font-style: normal;
+}
+ul.toc > li.chapter::before {
+  content: "Chapter " counter(toc-chapter, decimal);
+  display: block;
+  margin: 1em 0 0.1em -2.5cm;
+  font-weight: normal;
+  counter-increment: toc-chapter;
+  page-break-after: avoid;
+}
+
+span.element, span.attribute {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 80%;
+}
+
+span.property { font-weight: bold }
+code, span.css, span.value, span.declaration {
+  font: 90% "Lucida Console", "Lucida Sans Typewriter", monospace;
+}
+
+table.vulnerability_count{
+	/*margin: auto;*/
+	width: 70%;
+}
+
+table.vulnerability_count, th, td{
+	border: 1px solid black;
+	border-collapse:collapse;
+}
+
+
+h2.critical, th.critical, td.critical {
+  color:#000000;
+  background-color: #ff0000;
+}
+
+h2.high, th.high, td.high {
+  color:#000000;
+  background-color: #8b0000;
+}
+
+h2.medium, th.medium, td.medium {
+  color:#000000;
+  background-color: #ffa500;
+}
+
+h2.low, th.low, td.low {
+  color:#000000;
+  background-color: #00bfff;
+}
+
+h2.informational, th.informational, td.informational {
+  color:#000000;
+  background-color: #add8e6;
+}
+
+h2.bestpractice, th.bestpractice, td.bestpractice {
+  color:#000000;
+  background-color:#F0F8FF;
+}
+
+
+@media screen, handheld and (width: 21cm) and (height: 29.7cm){
+  html { margin: 1em; font: 14px "Gill Sans", sans-serif; }
+  h1 { margin-bottom: 0.5em }
+}
+
+/* style sheet for "A4" printing */ 
+@media print and (width: 21cm) and (height: 29.7cm) {
+   @page {
+      margin: 3cm;
+   }
+}
